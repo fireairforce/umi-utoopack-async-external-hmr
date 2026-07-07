@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <h2>Yay! Welcome to umi!00z</h2>
+      <h2>Yay! Welcome to umi!</h2>
       <p>
         promise-external: {JSON.stringify(promiseExternal)} / {foo}
       </p>

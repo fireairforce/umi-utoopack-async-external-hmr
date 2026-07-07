@@ -11,16 +11,11 @@
   },
   "dependencies": {
     "query-string": "^9.4.1",
-    "umi": "^4.6.71"
+    "umi": "^4.6.73"
   },
   "devDependencies": {
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
-    "typescript": "^5.0.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "@utoo/pack": "1.4.20"
-    }
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.9.3"
   }
 }

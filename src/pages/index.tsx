@@ -16,7 +16,7 @@ export default function HomePage() {
     <div>
       <h2>Yay! Welcome to umi!0000</h2>
       <p>
-        promise-external: {promiseExternal} / {foo}
+        promise-external: {JSON.stringify(promiseExternal)} / {foo}
       </p>
       <p>
         <img src={yayJpg} width="388" />

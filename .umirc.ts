@@ -11,5 +11,5 @@ export default defineConfig({
       'promise Promise.resolve({ foo: "bar", default: "from-promise-external-1111" })',
   },
   mfsu: false,
-  // utoopack: {},
+  utoopack: {},
 });

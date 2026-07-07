@@ -1,7 +1,7 @@
 {
   "name": "umi-utoopack-async-external-hmr",
   "private": true,
-  "author": "",
+  "author": "zoomdong07",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",

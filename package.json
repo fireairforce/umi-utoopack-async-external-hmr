@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "query-string": "^9.4.1",
-    "umi": "^4.6.73"
+    "umi": "^4.6.79"
   },
   "devDependencies": {
     "@types/react": "^18.3.31",

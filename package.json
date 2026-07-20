@@ -3,8 +3,12 @@
   "private": true,
   "author": "zoomdong07",
   "scripts": {
-    "dev": "umi dev",
-    "build": "umi build",
+    "dev": "BUNDLER=utoopack PORT=8000 umi dev",
+    "dev:utoo": "BUNDLER=utoopack PORT=8000 umi dev",
+    "dev:mako": "BUNDLER=mako PORT=8100 umi dev",
+    "build": "BUNDLER=utoopack umi build",
+    "build:utoo": "BUNDLER=utoopack umi build",
+    "build:mako": "BUNDLER=mako umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
     "start": "npm run dev"

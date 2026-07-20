@@ -1,28 +1,27 @@
-import yayJpg from '../assets/yay.jpg';
-import qs from 'query-string';
-import promiseExternal, { foo } from 'promise-external';
-import { useEffect } from 'react';
-
-console.log('===>q222s111zz11zz', qs);
-console.log('===>promiseExternal112221', promiseExternal, foo);
+import { Link } from 'umi';
 
 export default function HomePage() {
-  useEffect(() => {
-    console.log('===>qs inner11110002223331111zz11zzzzz', qs);
-    console.log('===>promiseExternal inner', promiseExternal, foo);
-  }, []);
-
   return (
     <div>
-      <h2>Yay! Welcome to umi!</h2>
+      <h2>{__DEMO_BUNDLER__}：global external 延迟注入复现</h2>
       <p>
-        promise-external: {JSON.stringify(promiseExternal)} / {foo}
+        首次打开首页时，head script 只创建空对象{' '}
+        <code>window.FakeModule = {'{}'}</code>。
       </p>
       <p>
-        <img src={yayJpg} width="388" />
+        通过下面的客户端路由进入页面后，route wrapper 会等待 1 秒再注入{' '}
+        <code>foo</code>。
       </p>
       <p>
-        To get started, edit <code>pages/index.tsx</code> and save to reload.
+        wrapper 使用{' '}
+        <code>Object.assign(window.FakeModule, {'{ foo }'})</code>，不会替换原对象。
+      </p>
+      <p>
+        <Link to="/docs">通过客户端路由进入复现页</Link>
+      </p>
+      <p>
+        对照启动命令：<code>pnpm dev:mako</code> /{' '}
+        <code>pnpm dev:utoo</code>，分别访问 8100 / 8000 端口。
       </p>
     </div>
   );

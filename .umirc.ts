@@ -1,15 +1,24 @@
-import { defineConfig } from "umi";
+import { defineConfig } from 'umi';
+
+const bundler = process.env.BUNDLER === 'mako' ? 'mako' : 'utoopack';
 
 export default defineConfig({
   routes: [
-    { path: "/", component: "index" },
-    { path: "/docs", component: "docs" },
+    { path: '/', component: 'index' },
+    {
+      path: '/docs',
+      component: 'docs',
+      wrappers: ['@/wrappers/FakeModuleWrapper'],
+    },
   ],
   npmClient: 'pnpm',
   externals: {
-    'promise-external':
-      'promise Promise.resolve({ foo: "bar", default: "from-promise-external-1111" })',
+    'fake-module': 'FakeModule',
+  },
+  headScripts: [{ content: 'window.FakeModule = {};' }],
+  define: {
+    __DEMO_BUNDLER__: bundler,
   },
   mfsu: false,
-  utoopack: {},
+  ...(bundler === 'mako' ? { mako: {} } : { utoopack: {} }),
 });

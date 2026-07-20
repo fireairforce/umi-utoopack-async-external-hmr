@@ -1,8 +1,13 @@
 import 'umi/typings';
 
-declare module 'promise-external' {
-  export const foo: string;
+declare global {
+  const __DEMO_BUNDLER__: 'mako' | 'utoopack';
 
-  const promiseExternal: string;
-  export default promiseExternal;
+  interface Window {
+    FakeModule: {
+      foo?: () => string;
+    };
+  }
 }
+
+export {};
